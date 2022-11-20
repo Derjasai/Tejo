@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="/webjars/jquery/jquery.min.js"></script>
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="CSS/loader.css">
+    <script src="JS/apiclient.js"></script>
+    <script src="JS/app.js"></script>
+    <title>Loader</title>
+</head>
+<body  onload="iniciar()">
+<script type="text/javascript">
+    var apiclient = apiclient;
+   //Redireccionamiento tras 5 min
+   setTimeout( function() { window.location.href = "participante.html"; }, 300000 );
+
+   function iniciar(){
+       setInterval(myTimer, 1000);
+
+   }
+
+   function myTimer(){
+       apiclient.getAllUsers(redirectCanva);
+
+   }
+    var redirectCanva = function (data){
+        data.forEach((element) => {
+            window.location.href="participante.html"
+        })
+    }
+
+</script>
+<h1 class="title">Loading</h1>
+<div class="rainbow-marker-loader"></div>
+</body>
+</html>
