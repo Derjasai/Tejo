@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns="http://www.w3.org/1999/html">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -8,81 +8,70 @@
     <script src="/webjars/sockjs-client/sockjs.min.js"></script>
     <script src="/webjars/stomp-websocket/stomp.min.js"></script>
 
-    <title>DrawIt!!!</title>
-
-    <link rel="stylesheet" href="CSS/home.css">
+    <title>Tejito</title>
     <script src="JS/app.js"></script>
-    <script src="JS/apiclient.js"></script>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3" crossorigin="anonymous"></script>
+
+    <Link rel="Stylesheet" type="text/css" href="CSS/Menu.css">
+    <link href="https://fonts.googleapis.com/css?family=Abril+Fatface|Luckiest+Guy|Orbitron|Russo+One|Shadows+Into+Light|Teko&display=swap" rel="stylesheet">
 
 </head>
 
 <body>
 
-<div class="container">
-    <img src="https://i.ibb.co/S50dwqP/icons8-setting-64.png" align="left" width="50" height="50">
-    <img src="https://i.ibb.co/fxgZ7yy/icons8-male-user-50.png" align="right" width="50" height="50">
-
-    <div class="abs-center">
-        <img src="https://i.ibb.co/wBxRHxV/Logo.png" width="500" height="380">
-    </div>
-
-</div>
-
-<div class="abs-center">
-
-    <div class="d-grid gap-2">
-        <button type="button" class="btn btn-outline-secondary btn-lg" data-bs-toggle="modal" data-bs-target="#masterModal">
-            Crear Sesión
-        </button>
-        <br><br>
-        <!-- Button trigger modal -->
-        <button type="button" class="btn btn-outline-secondary btn-lg" data-bs-toggle="modal" data-bs-target="#exampleModal">
-            Unirse a una Sesión
-        </button>
-
-        <!-- Modal -->
-        <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-            <div class="modal-dialog">
-                <div class="modal-content">
-                    <div class="modal-header">
-                        <h5 class="modal-title" id="exampleModalLabel">Unirse a una partida</h5>
-                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                    </div>
-                    <div class="modal-body">
-                        <p>Nombre: <input id="userName" type="text" name="nombre" placeholder="Nombre"></p>
-
-                        <p>Código: <input id="codigo" type="number" name="numero" placeholder="Código"></p>
-
-                    </div>
-                    <div class="modal-footer">
-                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Salir</button>
-                        <button class="btn btn-primary" onclick="app.createUser()">Iniciar</button>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <div class="modal fade" id="masterModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-            <div class="modal-dialog">
-                <div class="modal-content">
-                    <div class="modal-header">
-                        <h5 class="modal-title" id="exampleModalLabel2">Unirse a una partida</h5>
-                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                    </div>
-                    <div class="modal-body">
-                        <p>Nombre: <input id="masterName" type="text" name="nombre" placeholder="Nombre"></p>
-                    </div>
-                    <div class="modal-footer">
-                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Salir</button>
-                        <button class="btn btn-primary" onclick="app.createMaster()">Iniciar</button>
-                    </div>
-                </div>
-            </div>
+<div class="container-fluid">
+    <div class="title">TEJO</div>
+    <div class="center-content">
+        <div class="board">
+            <div class="prompt">Cantidad de jugadores</div>
+            <div class="menu-option" id="2P" onclick="app.playersCant(2)">2 Jugadores</div>
+            <div class="menu-option" id="3P" onclick="app.playersCant(3)">3 Jugadores</div>
+            <div class="menu-option" id="4P" onclick="app.playersCant(4)">4 Jugadores</div>
         </div>
     </div>
 </div>
 
+<section id="login2">
+    <header>
+        Usuarios
+        <button class="close" onclick="app.cerrar(2)">X</button>
+    </header>
+    <div>
+        <p>Digite los nombres de los jugadores: </p>
+        <input type="text" name="nick" id="2P1" placeholder="player1"/><br/>
+        <input type="text" name="nick" id="2P2" placeholder="player2"/><br/>
+        <button onclick="app.iniciar()">Jugar</button>
+    </div>
+</section>
+
+<section id="login3">
+    <header>
+        Usuarios
+        <button class="close" onclick="app.cerrar(3)">X</button>
+    </header>
+    <div>
+        <p>Digite los nombres de los jugadores: </p>
+        <input type="text" name="nick" id="3P1" placeholder="player1"/><br/>
+        <input type="text" name="nick" id="3P2" placeholder="player2"/><br/>
+        <input type="text" name="nick" id="3P3" placeholder="player3"/><br/>
+        <button onclick="app.iniciar()">Jugar</button>
+    </div>
+</section>
+
+<section id="login4">
+    <header>
+        Usuarios
+        <button class="close" onclick="app.cerrar(4)">X</button>
+    </header>
+    <div>
+        <p>Digite los nombres de los jugadores: </p>
+        <input type="text" name="nick" id="4P1" placeholder="player1"/><br/>
+        <input type="text" name="nick" id="4P2" placeholder="player2"/><br/>
+        <input type="text" name="nick" id="4P3" placeholder="player3"/><br/>
+        <input type="text" name="nick" id="4P4" placeholder="player4"/><br/>
+        <button onclick="app.iniciar()">Jugar</button>
+    </div>
+</section>
 </body>
 </html>

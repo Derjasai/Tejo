@@ -1,0 +1,62 @@
+html {
+    height: 100%;
+}
+
+body {
+    background: radial-gradient(ellipse at center, #443501 0%,#000000 100%);
+    height: 100%;
+}
+
+div{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+h1 {
+    background: linear-gradient(to bottom, #cfc09f 22%,#634f2c 24%, #cfc09f 26%, #cfc09f 27%,#ffecb3 40%,#3a2c0f 78%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    color: #fff;
+    font-family: 'Playfair Display', serif;
+    position: relative;
+    text-transform: uppercase;
+    font-size: 18vw;
+    margin: 0;
+    font-weight: 400;
+
+}
+
+h1:after {
+    background: none;
+    content: attr(data-heading);
+    left: 0;
+    top: 0;
+    z-index: -1;
+    position: absolute;
+    text-shadow:
+            -1px 0 1px #c6bb9f,
+            0 1px 1px #c6bb9f,
+            5px 5px 10px rgba(0, 0, 0, 0.4),
+            -5px -5px 10px rgba(0, 0, 0, 0.4);
+}
+
+.botones{
+    position:relative;
+    height:50px;
+    width: 200px;
+    background: radial-gradient(ellipse at center, #443501 0%,#000000 100%);
+    text-align:center;
+    font-size:30px;
+    background-size: 1px 300%;
+    -webkit-transition:0.5s;
+    transition:0.5s;
+    color:orange;
+    font-family:shadows into light;
+    cursor:pointer;
+    text-shadow:
+            -1px 0 1px #c6bb9f,
+            0 1px 1px #c6bb9f,
+            5px 5px 10px rgba(0, 0, 0, 0.4),
+            -5px -5px 10px rgba(0, 0, 0, 0.4);
+}
